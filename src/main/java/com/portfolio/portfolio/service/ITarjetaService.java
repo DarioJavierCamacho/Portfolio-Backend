@@ -21,5 +21,7 @@ public interface ITarjetaService {
     //Guarda una tarjeta 
     public void saveTarjeta(Tarjeta tarj);
     
+    public void editarTarjeta( Tarjeta Tarj);
     
+    public void borrarTarjeta(Long id);
 }

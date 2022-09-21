@@ -29,4 +29,14 @@ public class TarjetaService implements ITarjetaService{
     public void saveTarjeta(Tarjeta tarj) {
         tarjetaRepo.save(tarj);
     }
+
+    @Override
+    public void editarTarjeta(Tarjeta Tarj) {
+        tarjetaRepo.save(Tarj);
+    }
+
+    @Override
+    public void borrarTarjeta(Long id) {
+        tarjetaRepo.deleteById(id);
+    }
 }
