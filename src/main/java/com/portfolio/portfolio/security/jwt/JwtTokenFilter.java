@@ -16,14 +16,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  *
  * @author dario
- * valida el token en cada peticion y permite el acceso al recurso, en caso de ser invalido devuelve no autorizado
+ * @valida el token en cada peticion y permite el acceso al recurso, en caso de ser invalido devuelve no autorizado
  */
 public class JwtTokenFilter extends OncePerRequestFilter{
 

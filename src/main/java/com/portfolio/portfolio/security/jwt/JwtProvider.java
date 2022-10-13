@@ -16,7 +16,8 @@ import org.springframework.stereotype.Component;
 
 /**
  *
- * @author dario Genera el token y lo valida
+ * @author dario 
+ * @Genera el token y lo valida
  */
 @Component
 public class JwtProvider {

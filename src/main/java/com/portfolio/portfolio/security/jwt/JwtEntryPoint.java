@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 
 /**
  *
- * @author dario comprueba si hay un token valido, sino devuelve respuesta 401
+ * @author dario 
+ * @comprueba si hay un token valido, sino devuelve respuesta 401
  * no autorizado
  */
 @Component
