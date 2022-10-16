@@ -26,11 +26,11 @@ public class UsuarioService {
         return usuariorepository.findByUsername(nombreusuario);
     }
 
-    public boolean existByNombreUsuario(String nombreusuario) {
+    public boolean existsByNombreUsuario(String nombreusuario) {
         return usuariorepository.existByUsername(nombreusuario);
     }
 
-    public boolean existByEmail(String email) {
+    public boolean existsByEmail(String email) {
         return usuariorepository.existByEmail(email);
     }
 
