@@ -8,6 +8,7 @@ import com.portfolio.portfolio.model.Tarjeta;
 import com.portfolio.portfolio.service.ITarjetaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,21 +28,24 @@ public class Controller {
     @Autowired
     private ITarjetaService tarj;
 
-    @GetMapping("/test")
+    @GetMapping("/tarjeta")
     @ResponseBody
     public List<Tarjeta> GetDatos() {
         return tarj.getAll();
     }
 
-    @PostMapping("/test")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/tarjeta")
     public void agregarTarjeta(@RequestBody Tarjeta Tarj) {
         tarj.saveTarjeta(Tarj);
     }
-    @PutMapping("/test")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/tarjeta")
     public void editarTarjeta(@RequestBody Tarjeta Tarj) {
         tarj.saveTarjeta(Tarj);
     }
-    @DeleteMapping("/test")
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/tarjeta")
     public void editarTarjeta(@RequestParam Long id){
         tarj.borrarTarjeta(id);
     }
