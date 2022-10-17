@@ -12,13 +12,13 @@ import lombok.Setter;
  *
  * @author dario
  */
-
-@Setter
 @Getter
+@Setter
 public class LoginUsuario {
 
     @NotBlank
-    private String username;
+    private String nombreUsuario;
     @NotBlank
     private String password;
+
 }

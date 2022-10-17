@@ -22,9 +22,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtProvider {
 
-    @Value("$jwt.secret")
+    @Value("${jwt.secret}")
     private String secret;
-    @Value("$jwt.expiration")
+    @Value("${jwt.expiration}")
     private int expiration;
     private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
 
@@ -33,7 +33,7 @@ public class JwtProvider {
         return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + expiration * 1000))
-                .signWith(SignatureAlgorithm.ES512, secret).compact();
+                .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
 
     public String getUsernameFromToken(String token) {

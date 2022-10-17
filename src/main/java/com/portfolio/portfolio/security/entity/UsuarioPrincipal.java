@@ -30,12 +30,12 @@ public class UsuarioPrincipal implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     @Override
@@ -59,11 +59,11 @@ public class UsuarioPrincipal implements UserDetails {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public UsuarioPrincipal(String nombre, String username, String email, String password, Collection<? extends GrantedAuthority> Authorities) {
@@ -76,7 +76,7 @@ public class UsuarioPrincipal implements UserDetails {
 
     public static UsuarioPrincipal build(Usuario usuario) {
         List<GrantedAuthority> authorities
-                = usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolnombre().name())).collect(Collectors.toList());
-        return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword(), authorities);
+                = usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
+        return new UsuarioPrincipal(usuario.getNombre(), usuario.getUsername(), usuario.getEmail(), usuario.getPassword(), authorities);
     }
 }

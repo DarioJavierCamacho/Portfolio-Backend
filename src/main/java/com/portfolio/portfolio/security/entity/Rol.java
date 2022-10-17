@@ -29,13 +29,13 @@ public class Rol {
     private int id;
     @NotNull
     @Enumerated(EnumType.STRING)
-    private RolNombre rolnombre;
+    private RolNombre rolNombre;
 
     public Rol() {
     }
 
-    public Rol(RolNombre rolnombre) {
-        this.rolnombre = rolnombre;
+    public Rol(RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
     }
 
 }

@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,22 +32,22 @@ public class Usuario {
     private String nombre;
     @NotNull
     @Column(unique = true)
-    private String nombreUsuario;
+    private String username;
     @NotNull
     private String email;
     @NotNull
     private String password;
     @NotNull
-    @ManyToMany
-    @JoinTable(name = "usuario rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String nombreUsuario, String email, String password) {
+    public Usuario(String nombre, String username, String email, String password) {
         this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
+        this.username = username;
         this.email = email;
         this.password = password;
     }
@@ -67,13 +68,15 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
+ 
 
     public String getEmail() {
         return email;
