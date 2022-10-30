@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,9 +26,13 @@ public class Tarjeta {
     private String titulo;
     private String subtitulo;
     private String imgsrc;
-    private String tipo;
+    @NotNull
+    private int tipo;
+    private int percent;
+    private String fInicio;
+    private String fFin;
 
-    public Tarjeta(long id, String titulo, String subtitulo, String imgsrc, String tipo) {
+    public Tarjeta(long id, String titulo, String subtitulo, String imgsrc, int tipo) {
         this.id = id;
         this.titulo = titulo;
         this.subtitulo = subtitulo;
