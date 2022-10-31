@@ -32,14 +32,17 @@ public class Tarjeta {
     private String fInicio;
     private String fFin;
 
-    public Tarjeta(long id, String titulo, String subtitulo, String imgsrc, int tipo) {
+    public Tarjeta(Long id, String titulo, String subtitulo, String imgsrc, int percent, String fInicio, String fFin) {
         this.id = id;
         this.titulo = titulo;
         this.subtitulo = subtitulo;
         this.imgsrc = imgsrc;
-        this.tipo = tipo;
+        this.percent = percent; 
+        this.fInicio = fInicio;
+        this.fFin = fFin;
     }
 
+  
     public Tarjeta() {
     }
 }
