@@ -19,7 +19,7 @@ public class PortfolioApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("https://portfoliodariocamacho.web.app").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}
