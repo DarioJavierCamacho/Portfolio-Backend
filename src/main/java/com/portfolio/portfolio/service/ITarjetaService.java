@@ -6,6 +6,7 @@ package com.portfolio.portfolio.service;
 
 import com.portfolio.portfolio.model.Tarjeta;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,4 +25,6 @@ public interface ITarjetaService {
     public void editarTarjeta( Tarjeta Tarj);
     
     public void borrarTarjeta(Long id);
+    
+    public Optional<Tarjeta> getById(long id);
 }

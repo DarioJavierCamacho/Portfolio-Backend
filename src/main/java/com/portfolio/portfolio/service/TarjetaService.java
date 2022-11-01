@@ -7,6 +7,7 @@ package com.portfolio.portfolio.service;
 import com.portfolio.portfolio.model.Tarjeta;
 import com.portfolio.portfolio.repository.TarjetaRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +39,11 @@ public class TarjetaService implements ITarjetaService{
     @Override
     public void borrarTarjeta(Long id) {
         tarjetaRepo.deleteById(id);
+    }
+    
+
+    @Override
+    public Optional<Tarjeta> getById(long id) {
+        return tarjetaRepo.findById(id);
     }
 }

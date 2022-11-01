@@ -37,7 +37,7 @@ public class Tarjeta {
         this.titulo = titulo;
         this.subtitulo = subtitulo;
         this.imgsrc = imgsrc;
-        this.percent = percent; 
+        this.percent = percent;     
         this.fInicio = fInicio;
         this.fFin = fFin;
     }
