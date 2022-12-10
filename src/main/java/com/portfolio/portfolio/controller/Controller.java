@@ -31,7 +31,8 @@ public class Controller {
 
     @Autowired
     private ITarjetaService tarj;
-
+    
+    @CrossOrigin(origins = "https://portfoliodariocamacho.web.app")
     @GetMapping("/tarjeta")
     @ResponseBody
     public List<Tarjeta> GetDatos() {
